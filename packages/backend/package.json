@@ -23,7 +23,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
+    "@types/node": "^25.4.0",
     "@types/papaparse": "^5.3.14",
     "@types/pdf-parse": "^1.1.5",
     "tsx": "^4.7.1",
