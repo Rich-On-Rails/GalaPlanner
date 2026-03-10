@@ -1,0 +1,39 @@
+version: 2
+updates:
+  # ------------------------------
+  # NPM dependencies
+  # ------------------------------
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "06:00"
+      timezone: "Europe/London"
+    assignees:
+      - rich-howell 
+
+    commit-message:
+      prefix: "[Dep]"
+    labels:
+      - "dependencies"
+
+  # ------------------------------
+  # GitHub Actions (CI)
+  # ------------------------------
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "06:15"
+      timezone: "Europe/London"
+    commit-message:
+      prefix: "[CI]"
+    labels:
+      - "dependencies"
+      - "ci"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
