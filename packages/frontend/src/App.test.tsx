@@ -6,7 +6,7 @@ describe('App', () => {
   it('renders the app title', () => {
     render(<App />);
 
-    expect(screen.getByText('Train Gala Planner')).toBeInTheDocument();
+    expect(screen.getByText('Rich On Rails - Train Gala Planner')).toBeInTheDocument();
   });
 
   it('renders the subtitle', () => {
@@ -24,6 +24,6 @@ describe('App', () => {
   it('renders the footer', () => {
     render(<App />);
 
-    expect(screen.getByText(/plan your railway adventure/i)).toBeInTheDocument();
+    expect(screen.getByText(/Rich On Rails/i)).toBeInTheDocument();
   });
 });

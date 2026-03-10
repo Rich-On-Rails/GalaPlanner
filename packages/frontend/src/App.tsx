@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="app">
       <header className="app__header">
-        <h1 className="app__title">Train Gala Planner</h1>
+        <h1 className="app__title">Rich On Rails - Train Gala Planner</h1>
         <p className="app__subtitle">Upload your gala timetable or start from scratch</p>
       </header>
 
@@ -31,7 +31,7 @@ function App() {
       </main>
 
       <footer className="app__footer">
-        <p>Train Gala Planner - Plan your railway adventure</p>
+        <p>Train Gala Planner - Rich On Rails</p>
       </footer>
     </div>
   );
