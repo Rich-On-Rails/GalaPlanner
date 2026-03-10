@@ -9,7 +9,7 @@ import type {
   ConstraintImpact,
   Suggestion,
 } from '@gala-planner/shared';
-import { timeToMinutes } from './time-utils';
+import { timeToMinutes } from './time-utils.js';
 
 interface ExplainerContext {
   services: Service[];

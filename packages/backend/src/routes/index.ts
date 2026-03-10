@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify';
-import { uploadRoutes } from './upload';
-import { planRoutes } from './plan';
+import { uploadRoutes } from './upload.js';
+import { planRoutes } from './plan.js';
 
 export function registerRoutes(app: FastifyInstance) {
   app.register(uploadRoutes);

@@ -1,8 +1,8 @@
 import { randomUUID } from 'crypto';
 import type { ParseResult } from '@gala-planner/shared';
-import { parseCsv } from './csv-parser';
-import { parseXlsx } from './xlsx-parser';
-import { parsePdf } from './pdf-parser';
+import { parseCsv } from './csv-parser.js';
+import { parseXlsx } from './xlsx-parser.js';
+import { parsePdf } from './pdf-parser.js';
 
 export type SupportedMimeType =
   | 'text/csv'
@@ -55,6 +55,6 @@ export async function parseFile(
   return parser(buffer, fileName);
 }
 
-export { parseCsv } from './csv-parser';
-export { parseXlsx } from './xlsx-parser';
-export { parsePdf } from './pdf-parser';
+export { parseCsv } from './csv-parser.js';
+export { parseXlsx } from './xlsx-parser.js';
+export { parsePdf } from './pdf-parser.js';

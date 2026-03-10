@@ -9,8 +9,8 @@ import type {
   PlanLeg,
   PlanExplanation,
 } from '@gala-planner/shared';
-import { filterFeasibleServices, canTransfer, canStartService } from './feasibility';
-import { timeToMinutes, timeDifferenceMinutes } from './time-utils';
+import { filterFeasibleServices, canTransfer, canStartService } from './feasibility.js';
+import { timeToMinutes, timeDifferenceMinutes } from './time-utils.js';
 
 interface PlannerInput {
   services: Service[];

@@ -1,5 +1,5 @@
 import type { Service, UserConstraints, BreakPeriod } from '@gala-planner/shared';
-import { timeToMinutes } from './time-utils';
+import { timeToMinutes } from './time-utils.js';
 
 /**
  * Check if a service falls within the user's time window

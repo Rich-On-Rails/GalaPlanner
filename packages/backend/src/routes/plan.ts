@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import type { PlanRequest, PlanResponse, PlanWithAnalysis } from '@gala-planner/shared';
-import { storage } from '../services/storage';
-import { generatePlans, explainPlan } from '../planner';
+import { storage } from '../services/storage.js';
+import { generatePlans, explainPlan } from '../planner/index.js';
 
 export async function planRoutes(app: FastifyInstance) {
   app.post(

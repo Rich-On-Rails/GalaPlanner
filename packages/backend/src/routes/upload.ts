@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import type { UploadResponse } from '@gala-planner/shared';
-import { storage } from '../services/storage';
-import { parseFile } from '../parsers/index';
+import { storage } from '../services/storage.js';
+import { parseFile } from '../parsers/index.js';
 
 const ALLOWED_MIME_TYPES = [
   'application/pdf',
