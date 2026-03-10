@@ -1,0 +1,13 @@
+Train,Locomotive,Type,Origin,Destination,Depart,Arrive,Day,Notes
+1,4472 Flying Scotsman,steam,Pickering,Grosmont,09:00,09:45,2024-10-05,
+2,60163 Tornado,steam,Grosmont,Pickering,09:30,10:15,2024-10-05,
+3,D200,diesel,Pickering,Goathland,10:00,10:25,2024-10-05,
+4,4472 Flying Scotsman,steam,Grosmont,Pickering,10:30,11:15,2024-10-05,
+5,60163 Tornado,steam,Pickering,Grosmont,11:00,11:45,2024-10-05,
+6,D200,diesel,Goathland,Pickering,11:30,11:55,2024-10-05,
+7,4472 Flying Scotsman,steam,Pickering,Grosmont,12:00,12:45,2024-10-05,Lunch break follows
+8,60163 Tornado,steam,Grosmont,Pickering,12:30,13:15,2024-10-05,
+9,D200,diesel,Pickering,Goathland,14:00,14:25,2024-10-05,
+10,4472 Flying Scotsman,steam,Grosmont,Pickering,14:30,15:15,2024-10-05,
+11,60163 Tornado,steam,Pickering,Grosmont,15:00,15:45,2024-10-05,
+12,D200,diesel,Goathland,Pickering,15:30,15:55,2024-10-05,Last diesel working

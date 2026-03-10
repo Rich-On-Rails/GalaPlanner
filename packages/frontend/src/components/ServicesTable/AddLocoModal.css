@@ -1,0 +1,115 @@
+.add-loco-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.add-loco-modal {
+  background-color: var(--color-bg-card, #fff);
+  border-radius: var(--radius-lg, 8px);
+  padding: var(--space-xl, 24px);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.add-loco-modal__title {
+  margin: 0 0 var(--space-lg, 16px) 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text, #333);
+}
+
+.add-loco-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 12px);
+}
+
+.add-loco-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs, 4px);
+}
+
+.add-loco-modal__field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted, #666);
+}
+
+.add-loco-modal__field input,
+.add-loco-modal__field select {
+  padding: var(--space-sm, 8px) var(--space-md, 12px);
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: var(--radius-md, 4px);
+  font-size: 0.9rem;
+  font-family: inherit;
+  background-color: var(--color-bg, #fff);
+  color: var(--color-text, #333);
+}
+
+.add-loco-modal__field input:focus,
+.add-loco-modal__field select:focus {
+  outline: none;
+  border-color: var(--color-primary, #4a90a4);
+  box-shadow: 0 0 0 2px rgba(74, 144, 164, 0.2);
+}
+
+.add-loco-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm, 8px);
+  margin-top: var(--space-md, 12px);
+}
+
+.add-loco-modal__cancel-btn {
+  padding: var(--space-sm, 8px) var(--space-md, 12px);
+  background-color: transparent;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: var(--radius-md, 4px);
+  color: var(--color-text-muted, #666);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.add-loco-modal__cancel-btn:hover {
+  background-color: var(--color-bg, #f5f5f5);
+  border-color: var(--color-text-muted, #666);
+}
+
+.add-loco-modal__add-btn {
+  padding: var(--space-sm, 8px) var(--space-md, 12px);
+  background-color: var(--color-primary, #4a90a4);
+  border: none;
+  border-radius: var(--radius-md, 4px);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.add-loco-modal__add-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-dark, #3a7a94);
+}
+
+.add-loco-modal__add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .add-loco-modal {
+    margin: var(--space-md, 12px);
+    padding: var(--space-lg, 16px);
+  }
+}

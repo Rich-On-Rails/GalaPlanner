@@ -1,0 +1,226 @@
+.plan-controls {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.plan-controls__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.plan-controls__section {
+  margin-bottom: var(--space-md);
+}
+
+.plan-controls__label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.plan-controls__count {
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-left: var(--space-xs);
+}
+
+.plan-controls__station-selects {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.plan-controls__station-select {
+  flex: 1;
+  min-width: 0;
+}
+
+.plan-controls__input--full {
+  width: 100%;
+}
+
+.plan-controls__time-inputs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.plan-controls__separator {
+  color: var(--color-text-muted);
+}
+
+.plan-controls__input {
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  background-color: var(--color-bg-card);
+}
+
+.plan-controls__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.plan-controls__input--small {
+  width: 80px;
+}
+
+.plan-controls__buffer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.plan-controls__unit {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.plan-controls__breaks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.plan-controls__break-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.plan-controls__break-row:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.plan-controls__break-inputs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.plan-controls__break-station {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-left: var(--space-xs);
+}
+
+.plan-controls__input--label {
+  flex: 1;
+  min-width: 0;
+}
+
+.plan-controls__input--select {
+  flex: 1;
+  min-width: 0;
+}
+
+.plan-controls__break-remove {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 0 var(--space-xs);
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s;
+}
+
+.plan-controls__break-remove:hover {
+  color: var(--color-danger);
+}
+
+.plan-controls__break-add {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.plan-controls__break-add:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.plan-controls__locos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-height: 150px;
+  overflow-y: auto;
+  padding: var(--space-sm);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.plan-controls__loco {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s;
+}
+
+.plan-controls__loco:hover {
+  background-color: var(--color-bg);
+}
+
+.plan-controls__checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.plan-controls__loco-name {
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.plan-controls__loco-type {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.plan-controls__submit {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.plan-controls__submit:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.plan-controls__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,218 @@
+.loco-view {
+  margin-top: var(--space-lg);
+}
+
+.loco-view__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.loco-view__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.loco-view__add-btn {
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.loco-view__add-btn:hover {
+  background-color: var(--color-primary-hover, #2d3748);
+}
+
+.loco-view__empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-xl);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+.loco-view__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.loco-view__card {
+  position: relative;
+  background-color: var(--color-bg);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.loco-view__card:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.loco-view__card:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.2);
+}
+
+.loco-view__card--selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-card);
+  box-shadow: var(--shadow-md);
+}
+
+.loco-view__card--expanded {
+  grid-column: span 1;
+}
+
+.loco-view__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.loco-view__card-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.loco-view__type {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: white;
+}
+
+.loco-view__type--steam {
+  background-color: #e53e3e;
+}
+
+.loco-view__type--diesel {
+  background-color: #4299e1;
+}
+
+.loco-view__type--electric {
+  background-color: #48bb78;
+}
+
+.loco-view__type--dmu {
+  background-color: #9f7aea;
+}
+
+.loco-view__type--other {
+  background-color: var(--color-text-muted);
+}
+
+.loco-view__count {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.loco-view__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.3;
+}
+
+.loco-view__schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.loco-view__run {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.75rem;
+}
+
+.loco-view__run-time {
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  font-weight: 500;
+  min-width: 40px;
+}
+
+.loco-view__run-route {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.loco-view__no-runs {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Expand/collapse button */
+.loco-view__more-btn {
+  background: none;
+  border: none;
+  padding: var(--space-xs) 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary, #4a5568);
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s;
+}
+
+.loco-view__more-btn:hover {
+  color: var(--color-primary-hover, #2d3748);
+  text-decoration: underline;
+}
+
+/* Remove button - visible on hover */
+.loco-view__remove-btn {
+  padding: 2px var(--space-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.loco-view__card:hover .loco-view__remove-btn {
+  opacity: 1;
+}
+
+.loco-view__remove-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .loco-view__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .loco-view__remove-btn {
+    opacity: 1;
+  }
+}

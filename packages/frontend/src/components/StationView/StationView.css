@@ -1,0 +1,179 @@
+.station-view {
+  margin-top: var(--space-lg);
+}
+
+.station-view__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.station-view__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.station-view__add-btn {
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.station-view__add-btn:hover {
+  background-color: var(--color-primary-hover, #2d3748);
+}
+
+.station-view__empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-xl);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+/* ─── Station list ─── */
+.station-view__list {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.station-view__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.station-view__row:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.station-view__name {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+}
+
+.station-view__name-input {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+.station-view__count {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.station-view__remove-btn {
+  padding: 2px var(--space-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.station-view__row:hover .station-view__remove-btn {
+  opacity: 1;
+}
+
+.station-view__remove-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+/* ─── Add row (inline) ─── */
+.station-view__add-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.station-view__add-input {
+  flex: 1;
+  font-size: 0.875rem;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.station-view__add-input:focus {
+  border-color: var(--color-primary);
+}
+
+.station-view__add-confirm {
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.station-view__add-confirm:hover {
+  background-color: var(--color-primary-hover, #2d3748);
+}
+
+.station-view__add-confirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.station-view__add-cancel {
+  padding: var(--space-xs) var(--space-sm);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.station-view__add-cancel:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+  .station-view__remove-btn {
+    opacity: 1;
+  }
+}

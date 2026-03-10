@@ -1,0 +1,46 @@
+.editable-cell-display {
+  display: inline-block;
+  min-width: 60px;
+}
+
+.editable-cell-empty {
+  color: #999;
+}
+
+.editable-cell-input,
+.editable-cell-select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--color-primary, #4a90a4);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  background: #fff;
+  min-width: 0;
+}
+
+.editable-cell-input:focus,
+.editable-cell-select:focus {
+  outline: none;
+  border-color: #4a90a4;
+  box-shadow: 0 0 0 2px rgba(74, 144, 164, 0.2);
+}
+
+.editable-cell-select {
+  cursor: pointer;
+}
+
+.editable-notes-display {
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+}
+
+.editable-notes-display:hover {
+  background-color: #f0f7fa;
+}
+
+.editable-notes-input {
+  min-width: 150px;
+}

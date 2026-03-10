@@ -1,0 +1,238 @@
+.plan-assistant {
+  padding: var(--space-md);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.plan-assistant__summary {
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.plan-assistant__summary-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.plan-assistant__section {
+  margin-bottom: var(--space-md);
+}
+
+.plan-assistant__section:last-child {
+  margin-bottom: 0;
+}
+
+.plan-assistant__section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Highlights */
+.plan-assistant__highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plan-assistant__highlight {
+  padding: var(--space-xs) 0;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+}
+
+.plan-assistant__highlight::before {
+  content: '\2713';
+  margin-right: var(--space-sm);
+  color: var(--color-success, #22c55e);
+  font-weight: bold;
+}
+
+/* Constraint Impacts */
+.plan-assistant__impacts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.plan-assistant__impact {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+.plan-assistant__impact--positive {
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.plan-assistant__impact--negative {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.plan-assistant__impact--neutral {
+  background-color: rgba(148, 163, 184, 0.1);
+}
+
+.plan-assistant__impact-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.plan-assistant__impact--positive .plan-assistant__impact-icon {
+  background-color: var(--color-success, #22c55e);
+  color: white;
+}
+
+.plan-assistant__impact--negative .plan-assistant__impact-icon {
+  background-color: var(--color-error, #ef4444);
+  color: white;
+}
+
+.plan-assistant__impact--neutral .plan-assistant__impact-icon {
+  background-color: #94a3b8;
+  color: white;
+}
+
+.plan-assistant__impact-text {
+  flex: 1;
+  color: var(--color-text);
+}
+
+.plan-assistant__impact-text strong {
+  font-weight: 600;
+}
+
+/* Missed Locomotives */
+.plan-assistant__missed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.plan-assistant__missed-item {
+  padding: var(--space-sm);
+  background-color: rgba(239, 68, 68, 0.05);
+  border-left: 3px solid var(--color-error, #ef4444);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.plan-assistant__missed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+
+.plan-assistant__missed-name {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.plan-assistant__missed-reason {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-error, #ef4444);
+  border-radius: var(--radius-sm);
+}
+
+.plan-assistant__missed-details {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.plan-assistant__missed-fix {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+}
+
+.plan-assistant__missed-fix strong {
+  color: var(--color-primary, #3b82f6);
+}
+
+.plan-assistant__missed-more {
+  padding: var(--space-xs);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Suggestions */
+.plan-assistant__suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.plan-assistant__suggestion {
+  display: block;
+}
+
+.plan-assistant__suggestion-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background-color: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.plan-assistant__suggestion-btn:hover {
+  background-color: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.plan-assistant__suggestion-btn:focus {
+  outline: 2px solid var(--color-primary, #3b82f6);
+  outline-offset: 2px;
+}
+
+.plan-assistant__suggestion-text {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.plan-assistant__suggestion-gain {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  background-color: var(--color-primary, #3b82f6);
+  color: white;
+  border-radius: var(--radius-sm);
+}
