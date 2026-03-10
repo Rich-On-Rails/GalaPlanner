@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import { ParsedPreview } from './ParsedPreview';
 import type { ParseResult } from '@gala-planner/shared';
 
@@ -36,6 +36,7 @@ const mockResult: ParseResult = {
 
 const mockResultWithWarning: ParseResult = {
   ...mockResult,
+  id: 'test-id-warning',
   issues: [
     {
       severity: 'warn',
@@ -46,19 +47,28 @@ const mockResultWithWarning: ParseResult = {
 };
 
 describe('ParsedPreview', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
   it('renders file information', () => {
-    render(<ParsedPreview result={mockResult} onReset={vi.fn()} />);
+    const { container } = render(<ParsedPreview result={mockResult} onReset={vi.fn()} />);
 
     expect(screen.getByText('test-timetable.csv')).toBeInTheDocument();
-    expect(screen.getByText('Upload another file')).toBeInTheDocument();
+    const headerActions = container.querySelector('.parsed-preview__header-actions');
+    expect(headerActions).toBeTruthy();
+    expect(within(headerActions as HTMLElement).getByRole('button', { name: 'Start over' })).toBeInTheDocument();
   });
 
   it('displays statistics', () => {
-    render(<ParsedPreview result={mockResult} onReset={vi.fn()} />);
+    const { container } = render(<ParsedPreview result={mockResult} onReset={vi.fn()} />);
 
-    expect(screen.getByText('Services')).toBeInTheDocument();
-    expect(screen.getByText('Stations')).toBeInTheDocument();
-    expect(screen.getByText('Locomotives')).toBeInTheDocument();
+    const statsBar = container.querySelector('.stats-bar');
+    expect(statsBar).toBeTruthy();
+
+    expect(within(statsBar as HTMLElement).getByText('Services')).toBeInTheDocument();
+    expect(within(statsBar as HTMLElement).getByText('Stations')).toBeInTheDocument();
+    expect(within(statsBar as HTMLElement).getByText('Locomotives')).toBeInTheDocument();
   });
 
   it('displays warning issues (not info)', () => {
@@ -71,7 +81,7 @@ describe('ParsedPreview', () => {
     const onReset = vi.fn();
     render(<ParsedPreview result={mockResult} onReset={onReset} />);
 
-    fireEvent.click(screen.getByText('Upload another file'));
+    fireEvent.click(screen.getByRole('button', { name: 'Start over' }));
 
     expect(onReset).toHaveBeenCalled();
   });
@@ -79,13 +89,16 @@ describe('ParsedPreview', () => {
   it('shows plan controls and view tabs when services are present', () => {
     render(<ParsedPreview result={mockResult} onReset={vi.fn()} />);
 
-    // Check plan controls are shown
+    // Sidebar navigation uses buttons
+    expect(screen.getByRole('button', { name: /Table/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Timeline/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Locos/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Stations/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Plan/i })).toBeInTheDocument();
+
+    // Plan controls appear when switching to Plan view
+    fireEvent.click(screen.getByRole('button', { name: /Plan/i }));
     expect(screen.getByText('Plan Your Day')).toBeInTheDocument();
     expect(screen.getByText('Generate Plan')).toBeInTheDocument();
-
-    // Check view tabs are available
-    expect(screen.getByRole('tab', { name: /Timeline/i })).toBeInTheDocument();
-    expect(screen.getByRole('tab', { name: /Locos/i })).toBeInTheDocument();
-    expect(screen.getByRole('tab', { name: /Table/i })).toBeInTheDocument();
   });
 });
