@@ -23,7 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "concurrently": "^8.2.2",
-    "eslint": "^8.57.1",
+    "eslint": "^10.7.0",
     "prettier": "^3.8.3",
     "rollup": "^4.60.1",
     "typescript": "^6.0.2",
