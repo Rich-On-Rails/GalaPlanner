@@ -4,9 +4,7 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: read
@@ -18,6 +16,7 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
